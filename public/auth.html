@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- the form awesome library is used to add icons to our form -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    />
+    <!-- include the stylesheet file -->
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+  </head>
+  <body>
+    <div class="header" w3-include-html="./htmlElements/header.html"></div>
+    <div class="bonus reg">
+      <h1>Auth</h1>
+      <form action="/auth" method="POST" class="one">
+        <p>Вход</p>
+        <div>
+          <label for="username">Имя:</label>
+          <input type="text" id="username" name="username" />
+        </div>
+        <div>
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <button class="btn" type="submit">Зарегистрироваться</button>
+      </form>
+      <form action="/login" method="POST" class="one">
+        <p>Войти</p>
+        <div>
+          <label for="username1">Имя:</label>
+          <input type="text" id="username1" name="username1" />
+        </div>
+        <div>
+          <label for="password1">Пароль:</label>
+          <input type="password" id="password1" name="password1" />
+        </div>
+        <button class="btn" type="submit">Отправить</button>
+      </form>
+    </div>
+    <script>w3.includeHTML()</script>
+  </body>
+</html>

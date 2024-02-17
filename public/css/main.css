@@ -1,0 +1,414 @@
+@font-face {
+  font-family: "Pixel Cyr";
+  font-weight: normal;
+  font-style: normal;
+
+  src: url("../fonts/PixelCyrNormal.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+head,
+body,
+#main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Pixel Cyr", normal;
+
+  color: #ffffff;
+  text-shadow: 3px 2px 0 rgba(0, 0, 0, 1);
+
+  image-rendering: pixelated;
+}
+
+.flex-flow {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#content {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#main {
+  animation: backgroundAnimate 60s linear infinite;
+
+  background-image: url("../img/background.png");
+  background-attachment: fixed;
+  background-position: 0 center;
+  background-size: auto 100%;
+
+  background-repeat-y: no-repeat;
+}
+
+@keyframes backgroundAnimate {
+  from {
+    background-position: 0 center;
+  }
+  50% {
+    background-position: 100 center;
+  }
+  to {
+    background-position: 0 center;
+  }
+}
+
+.first {
+  display: flex;
+  position: sticky;
+  top: 0;
+  padding: 25px;
+
+  flex-flow: column nowrap;
+  flex-grow: 10;
+}
+
+.second {
+  height: 100%;
+  padding: 25px;
+
+  flex-grow: 1;
+  margin-top: -150px;
+}
+
+.b-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.b-one {
+  padding: 25px 40px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.b-one h1 {
+  margin-right: 25px;
+  flex-grow: 1;
+}
+
+.bonus::after {
+  position: absolute;
+  content: "";
+  top: -20px;
+  left: -5;
+  background-image: url("../img/sprite_1_grass.png");
+  background-image: url(../img/sprite_1_grass.png);
+  height: 40px;
+  width: calc(100% + 10px);
+  background-size: auto 100%;
+  border-radius: 5px;
+}
+.b-one,
+.b-four {
+  min-width: 400px;
+}
+
+.b-one h1,
+.b-four h1 {
+  /* width: 100%; */
+}
+
+.b-four {
+  flex-grow: 1;
+}
+
+.b-two {
+  display: flex;
+
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  position: sticky;
+  top: 100px;
+}
+
+#button {
+  position: sticky;
+  top: 200px;
+
+  width: 100%;
+  height: 300px;
+  margin: 100px 25px;
+
+  cursor: pointer;
+
+  background-image: url("../img/ring.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.button-vfx {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.bunus-vfx {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  filter: grayscale(1);
+}
+
+.bonus {
+  position: relative;
+
+  display: flex;
+
+  margin-bottom: -5px;
+  padding: 35px 45px 40px 45px;
+
+  border-radius: 0px;
+  background-image: url("../img/sprite_1.png");
+  background-position: 100%;
+  background-size: 600px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  border-radius: 5px;
+}
+
+.bonus > h2 {
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.bonus > p {
+  font-size: 17px;
+  align-self: flex-start;
+}
+
+#counter,
+#factor,
+#background {
+  font-size: 38px;
+
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 1224px) {
+  .second {
+    max-width: 550px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .b-one,
+  .b-four,
+  .bonus > p {
+    font-size: 16px;
+  }
+  .b-one,
+  .b-four {
+    padding: 25px 45px 20px 45px;
+  }
+  .b-one h1,
+  .b-four h1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #counter,
+  #factor,
+  #background {
+    font-size: 33px;
+  }
+  #button {
+    margin: 25px;
+  }
+  .b-one,
+  .b-four {
+    width: 100%;
+    min-width: auto !important;
+  }
+  .first,
+  .b-wrapper {
+    height: 100%;
+    position: static;
+  }
+  #content,
+  .b-wrapper,
+  .flex-flow {
+    flex-flow: column nowrap;
+  }
+  .second {
+    margin-top: 0;
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .second {
+    padding: 25px 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #button {
+    margin: 0 25px;
+    margin-top: 25px;
+  }
+  .b-one,
+  .b-four {
+    width: 100%;
+  }
+  .b-one h1,
+  .b-four h1 {
+    overflow: hidden;
+  }
+  .b-one h1,
+  .b-one span,
+  .b-four h1,
+  .b-four span {
+  }
+  .b-one h1,
+  .b-four h1 {
+    font-size: 23px;
+  }
+  #counter,
+  #factory {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .b-one h1 {
+    font-size: 16px;
+  }
+  .b-one span {
+    font-size: 18px;
+  }
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.one * {
+  margin: 10px 0;
+}
+
+.reg {
+  height: 100vh;
+}
+
+.btn {
+  cursor: pointer;
+  font-family: "Pixel Cyr";
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+  height: 30px;
+  width: 100%;
+
+  background: #999 url("https://i.ibb.co/rb2TWXL/bgbtn.png") center / cover;
+  image-rendering: pixelated;
+  border: 2px solid #000;
+}
+.btn:hover .title {
+  background-color: rgba(100, 100, 255, 0.45);
+  text-shadow: 2px 2px #202013cc;
+  color: #ffffa0;
+}
+.btn:active .title {
+  box-shadow: inset -2px -4px #0004, inset 2px 2px #fff5;
+}
+
+.header {
+  position: relative;
+  z-index: 999;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-bottom: -5px;
+  padding: 35px 45px 40px 45px;
+
+  border-radius: 0px;
+  animation: backgroundAnimate 60s linear infinite;
+
+  background-image: url("../img/background.png");
+  background-attachment: fixed;
+  background-position: 0 center;
+  background-size: auto 100%;
+box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  border-radius: 5px;
+}
+
+.header::after {
+  position: absolute;
+  content: "";
+  top: -20px;
+  left: -5;
+  background-image: url("../img/sprite_1_grass.png");
+}
+.header * {
+  text-decoration: none;
+  color: white;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: max-content;
+  padding: 50px;
+}
+.scoreboard-table {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+}
+#names {
+
+}
+#score {
+
+}

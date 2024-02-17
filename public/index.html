@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Кликер Ring Collector</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="header" w3-include-html="./htmlElements/header.html"></div>
+    
+    <div id="main">
+      <div id="content">
+        <div class="b-wrapper">
+          <div class="b-one" style="width: 100%">
+            <h1>КОЛЕЦ: <span id="counter">0</span></h1>
+            <h1>В СЕКУНДУ: <span id="background">0</span></h1>
+            <h1>МНОЖИТЕЛЬ КЛИКА: <span id="factor">1.0</span></h1>
+          </div>
+        </div>
+
+        <div class="flex-flow">
+          <div class="first">
+            <div class="b-two">
+              <div id="button"><div class="button-vfx"></div></div>
+            </div>
+          </div>
+
+          <div class="second">
+            <div class="b-three"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>w3.includeHTML()</script>
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
